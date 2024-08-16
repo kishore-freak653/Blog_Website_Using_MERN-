@@ -1,0 +1,105 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  padding: 0 1rem;
+}
+
+nav .title {
+  font-size: 1.5rem;
+  margin: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem;
+  margin: 0 0.2rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for links */
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: rgba(7, 30, 238, 0.623);
+  /* Slightly visible background on hover */
+  color: yellow;
+  /* Change text color on hover (example: yellow) */
+}
+
+nav .menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+nav .menu span {
+  height: 0.25rem;
+  width: 100%;
+  background-color: white;
+  border-radius: 0.25rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+nav .menu.open span:nth-child(1) {
+  transform: rotate(45deg);
+  transform-origin: 0% 0%;
+}
+
+nav .menu.open span:nth-child(2) {
+  opacity: 0;
+}
+
+nav .menu.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  transform-origin: 0% 100%;
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.5rem;
+    background-color: black;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a {
+    margin: 0.2rem 0.5rem;
+  }
+}
